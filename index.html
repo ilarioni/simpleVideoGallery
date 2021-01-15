@@ -13,7 +13,7 @@
             <div class="col">
                 <div class="feature-img">
                     <img src="media/pic1.png" width="100%" alt="pic1">
-                    <img src="media/play.png" class="play-btn" alt="play">
+                    <img src="media/play.png" class="play-btn" alt="play" onclick="playVideo('media/vid1.mp4')">
                 </div>
             </div>
             <div class="col">
@@ -41,6 +41,29 @@
             </div>
         </div>
     </div> 
+
+    <div class="video-player" id="videoPlayer">
+        <video width="100%" controls autoplay id="myVideo">
+            <source src="media/vid1.mp4" type="video/mp4">
+        </video> 
+        <img src="media/close.png" alt="close" class="close-btn" onclick="stopVideo()">
+    </div>
     
+
+    <script>
+        var videoPlayer = document.getElementById("videoPlayer");
+        var myVideo = document.getElementById("myVideo");
+
+        function stopVideo(){
+            videoPlayer.style.display = "none";
+        }
+
+        function playVideo(file){
+            myVideo.src = file;
+            videoPlayer.style.display = "block";
+
+        }
+
+    </script>
 </body>
 </html>
